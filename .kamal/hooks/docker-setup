@@ -1,0 +1,5 @@
+#!/bin/sh
+
+kamal server exec "mkdir -p /root/data/archives"
+kamal server exec "touch /root/data/database.sqlite"
+kamal server exec "chown -R 100:101 /root/data"

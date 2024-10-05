@@ -1,0 +1,31 @@
+#file: noinspection YAMLSchemaValidation
+service: packistry
+image: [IMAGE NAME] # e.g., username/image-name
+
+registry:
+  server: ghcr.io/[IMAGE NAME]
+  username: [USERNAME] # e.g., myusername
+  password:
+    - KAMAL_REGISTRY_PASSWORD # value is set in secrets
+
+servers:
+  - [DOMAIN NAME] # e.g., 188.245.98.129 or packistryphp.com
+
+volumes:
+  - ./data/database.sqlite:/var/www/html/database/database.sqlite
+  - ./data/archives:/var/www/html/storage/app/private
+
+proxy:
+  host: [DOMAIN NAME] # e.g., packistryphp.com
+  ssl: true # Create an A record for the domain name pointing to your server's IP, and Kamal will obtain a free TLS certificate via Let's Encrypt.
+  forward_headers: true
+
+env:
+  clear:
+    APP_URL: https://[DOMAIN NAME] # e.g., https://packistry.j4mie.com
+    TRUSTED_PROXIES: 172.18.0.2 # kamal-proxy ip
+  secret:
+    - APP_KEY # value is set in secrets
+
+builder:
+  arch: arm64 # Specify your server's architecture, e.g., amd64 or arm64
