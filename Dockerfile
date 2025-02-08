@@ -1,1 +1,1 @@
-FROM ghcr.io/packistry/packistry:0.3.1
+FROM ghcr.io/packistry/packistry:0.5.0
