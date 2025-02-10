@@ -12,8 +12,7 @@ servers:
   - [DOMAIN NAME] # e.g., 188.245.98.129 or packistryphp.com
 
 volumes:
-  - ./data/database.sqlite:/var/www/html/database/database.sqlite
-  - ./data/archives:/var/www/html/storage/app/private
+  - ./data:/data
 
 proxy:
   host: [DOMAIN NAME] # e.g., packistryphp.com
