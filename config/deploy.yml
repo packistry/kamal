@@ -21,7 +21,7 @@ proxy:
 
 env:
   clear:
-    APP_URL: https://[DOMAIN NAME] # e.g., https://packistry.j4mie.com
+    APP_URL: https://[DOMAIN NAME] # e.g., https://packistryphp.com
     TRUSTED_PROXIES: 172.18.0.2 # kamal-proxy ip
   secret:
     - APP_KEY # value is set in secrets
