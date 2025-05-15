@@ -17,12 +17,11 @@ volumes:
 proxy:
   host: [DOMAIN NAME] # e.g., packistryphp.com
   ssl: true # Create an A record for the domain name pointing to your server's IP, and Kamal will obtain a free TLS certificate via Let's Encrypt.
-  forward_headers: true
 
 env:
   clear:
     APP_URL: https://[DOMAIN NAME] # e.g., https://packistryphp.com
-    TRUSTED_PROXIES: 172.18.0.2 # kamal-proxy ip
+    TRUSTED_PROXIES: *
   secret:
     - APP_KEY # value is set in secrets
 
